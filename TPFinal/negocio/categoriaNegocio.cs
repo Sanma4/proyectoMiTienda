@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
+using AccesoDatos;
 
-namespace negocio
+
+
+namespace AccesoDatos
 {
     public class categoriaNegocio
     {
@@ -13,16 +16,16 @@ namespace negocio
         public List<categoria> listar()
         {
             List<categoria> lista = new List<categoria>(); 
-            acessoDatos datos = new acessoDatos();
+            AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setarConsulta("select Id, Descripcion from categorias");
-                datos.ejecutarLector();
+                datos.setearConsulta("select Id, Descripcion from categorias");
+                datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
                     categoria aux = new categoria();
                     aux.Id = (int)datos.Lector["Id"];
-                    aux.descripcion = (string)datos.Lector["Descripcion"];
+                    aux.Descripcion = (string)datos.Lector["Descripcion"];
                     
                     lista.Add(aux); 
                 }

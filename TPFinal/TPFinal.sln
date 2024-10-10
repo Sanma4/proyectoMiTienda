@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaWeb", "TiendaWeb\TiendaWeb.csproj", "{047879B4-963E-4C5F-868C-43A0AC154278}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessoDatos", "AcessoDatos\AcessoDatos.csproj", "{B22B82A4-2229-4E71-88BE-F445CD3E3E04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AcessoDatos\AccesoDatos.csproj", "{B22B82A4-2229-4E71-88BE-F445CD3E3E04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dominio", "dominio\dominio.csproj", "{C72E8241-95B7-48B5-8FE5-73C64BCA27D3}"
 EndProject
