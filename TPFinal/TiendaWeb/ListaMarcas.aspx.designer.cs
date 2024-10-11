@@ -11,16 +11,16 @@ namespace TiendaWeb
 {
 
 
-    public partial class ListaProductos
+    public partial class FormularioMarcas
     {
 
         /// <summary>
-        /// Control dgvListaProductos.
+        /// Control dgvMarcas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvListaProductos;
+        protected global::System.Web.UI.WebControls.GridView dgvMarcas;
     }
 }

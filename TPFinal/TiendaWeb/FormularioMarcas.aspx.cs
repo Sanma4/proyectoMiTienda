@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace TiendaWeb
 {
-    public partial class FormularioMarcas : System.Web.UI.Page
+    public partial class ListaMarcas : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

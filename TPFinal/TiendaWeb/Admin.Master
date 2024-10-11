@@ -43,16 +43,16 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">GESTIÓN</div>
-                            <a class="nav-link" href="FormularioProductos.aspx">
+                            <a class="nav-link" href="ListaProductos.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-boxes"></i></div>
                                 Productos
                             </a>
                             <div class="sb-sidenav-menu-heading">AGREGAR</div>
-                            <a class="nav-link" href="FormularioMarcas.aspx">
+                            <a class="nav-link" href="ListaMarcas.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Marcas
                             </a>
-                            <a class="nav-link" href="FormularioCategorias.aspx">
+                            <a class="nav-link" href="ListaCategorias.aspx">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Categorias
                             </a>
@@ -65,6 +65,11 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
+                <hr />
+                <div class="container">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -80,10 +85,7 @@
             </div>
         </div>
 
-        <div class="container">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+
     </form>
 </body>
 </html>

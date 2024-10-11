@@ -72,9 +72,11 @@
     <Content Include="Favoritos.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="FormularioCategorias.aspx" />
-    <Content Include="FormularioMarcas.aspx" />
+    <Content Include="ListaCategorias.aspx" />
+    <Content Include="ListaMarcas.aspx" />
     <Content Include="FormularioProductos.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="FormularioMarcas.aspx" />
     <Content Include="ListaProductos.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MiPerfil.aspx" />
@@ -84,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -102,12 +105,19 @@
     <Compile Include="FormularioCategorias.aspx.designer.cs">
       <DependentUpon>FormularioCategorias.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FormularioMarcas.aspx.cs">
-      <DependentUpon>FormularioMarcas.aspx</DependentUpon>
+    <Compile Include="ListaCategorias.aspx.cs">
+      <DependentUpon>ListaCategorias.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FormularioMarcas.aspx.designer.cs">
-      <DependentUpon>FormularioMarcas.aspx</DependentUpon>
+    <Compile Include="ListaCategorias.aspx.designer.cs">
+      <DependentUpon>ListaCategorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMarcas.aspx.cs">
+      <DependentUpon>ListaMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListaMarcas.aspx.designer.cs">
+      <DependentUpon>ListaMarcas.aspx</DependentUpon>
     </Compile>
     <Compile Include="FormularioProductos.aspx.cs">
       <DependentUpon>FormularioProductos.aspx</DependentUpon>
@@ -125,9 +135,17 @@
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Home.Master.designer.cs">
       <DependentUpon>Home.Master</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioMarcas.aspx.cs">
+      <DependentUpon>FormularioMarcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioMarcas.aspx.designer.cs">
+      <DependentUpon>FormularioMarcas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListaProductos.aspx.cs">
       <DependentUpon>ListaProductos.aspx</DependentUpon>
@@ -167,6 +185,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcessoDatos\AccesoDatos.csproj">
+      <Project>{b22b82a4-2229-4e71-88be-f445cd3e3e04}</Project>
+      <Name>AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dominio\dominio.csproj">
+      <Project>{c72e8241-95b7-48b5-8fe5-73c64bca27d3}</Project>
+      <Name>dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\negocio\negocio.csproj">
+      <Project>{d464fbc2-2a4b-4df7-810f-60d8ceb54a06}</Project>
+      <Name>negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
