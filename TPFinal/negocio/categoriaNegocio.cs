@@ -13,13 +13,15 @@ namespace AccesoDatos
     public class categoriaNegocio
     {
 
-        public List<categoria> listar()
+        public List<categoria> listar(string id = "")
         {
             List<categoria> lista = new List<categoria>(); 
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("select Id, Descripcion from categorias");
+                if(id != "")
+                    datos.setearConsulta("select Id, Descripcion from categorias where id = " + id);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -40,6 +42,50 @@ namespace AccesoDatos
             {
                 datos.cerrarConexion();
             }
-        } 
+        }
+
+        public void Modificar(categoria nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("update Categorias set Descripcion = @desc where id = @id");
+                datos.setearParametro("@desc", nuevo.Descripcion);
+                datos.setearParametro("@id", nuevo.Id);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
+        public void Agregar(categoria nuevo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Insert into categorias values (@desc)");
+                datos.setearParametro("@desc", nuevo.Descripcion);
+                datos.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+
+        }
     }
 }

@@ -12,13 +12,15 @@ namespace AccesoDatos
 {
     public class articuloNegocio
     {
-        public List<articulo> listar()
+        public List<articulo> listar(string id = "")
         {
             List<articulo> lista = new List<articulo>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion as Marca, C.Descripcion as  Categoria, A.ImagenUrl, A.Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where M.Id = A.IdMarca And C.Id = A.IdCategoria");
+                if (id != "")
+                    datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.IdMarca, A.IdCategoria, M.Descripcion as Marca, C.Descripcion as  Categoria, A.ImagenUrl, A.Precio from ARTICULOS A, MARCAS M, CATEGORIAS C where M.Id = A.IdMarca And C.Id = A.IdCategoria and A.Id = " + id);
                 datos.ejecutarLectura();
                 while (datos.Lector.Read())
                 {
@@ -35,7 +37,7 @@ namespace AccesoDatos
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
-                    aux.Precio = Convert.ToDecimal(datos.Lector["Precio"], new CultureInfo("es-AR"));
+                    aux.Precio = Convert.ToDecimal(datos.Lector["Precio"], new CultureInfo("es-ES").NumberFormat);
 
                     lista.Add(aux);
                 }

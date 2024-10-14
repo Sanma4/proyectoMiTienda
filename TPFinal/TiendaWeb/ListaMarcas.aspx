@@ -13,5 +13,5 @@
             <asp:CommandField HeaderText="Acciones" ShowSelectButton="true" SelectText="✏️" />
         </Columns>
     </asp:GridView>
-    <a href="FormularioProductos.aspx" class="btn btn-dark">Agregar</a>
+    <a href="FormularioMarcas.aspx" class="btn btn-dark">Agregar</a>
 </asp:Content>

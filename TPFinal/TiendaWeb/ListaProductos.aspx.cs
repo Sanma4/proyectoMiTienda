@@ -20,6 +20,7 @@ namespace TiendaWeb
                 dgvListaProductos.DataSource = Session["listaArticulos"];
                 dgvListaProductos.DataBind();
             }
+
         }
 
         protected void dgvListaProductos_SelectedIndexChanged(object sender, EventArgs e)
