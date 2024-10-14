@@ -16,24 +16,24 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="Home.aspx">Navbar</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="Home.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
+                            <a class="nav-link" href="#ContentPlaceHolder1">Productos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Favoritos</a>
+                            <a class="nav-link" href="Favoritos.aspx">Favoritos</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"  aria-expanded="false" >
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="User" style="width: 30px; height: auto; border-radius: 50px;"/>
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="User" style="width: 30px; height: auto; border-radius: 50px;" />
                             </a>
                             <ul class="dropdown-menu dropdown-menu-lg-end">
                                 <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
@@ -47,10 +47,15 @@
                 </div>
             </div>
         </nav>
-        <div class="">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <div class="" >
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <hr />
+    <footer class="text-center">
+        <h3 style="margin-top: 40px; margin-bottom: 40px"> © Todos los derechos reservados - 2024 </h3>
+
+    </footer>
 </body>
 </html>

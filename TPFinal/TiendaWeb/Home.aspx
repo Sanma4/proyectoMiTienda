@@ -15,11 +15,10 @@
                         <div class="card h-100">
                             <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" style="height: 400px; width: auto;" alt="Imagen">
                             <div class="card-body">
-                                <h5 class="card-title"><%#Eval("Nombre") %></h5>
+                                <h4 class="card-title"><%#Eval("Nombre") %></h4>
                                 <p class="card-text"><%#Eval("Marca") %></p>
-                                <a class="btn btn-dark" href="VerDetalle.aspx">Ver detalle</a>
-                                <asp:button runat="server" class="btn btn-dark" Text="+"></asp:button> //Botón para añadir a favoritos, proxima fu
-                                   <i class="fa-solid fa-heart-circle-plus"></i>
+                                <asp:button runat="server" class="btn btn-dark" Text="Ver Detalle" CommandArgument='<%#Eval("Id")%>' CommandName="IdArticulo" id="btnVerDetalle" OnClick="btnVerDetalle_Click"></asp:button>
+                                <asp:button runat="server" class="btn btn-dark" Text="+"></asp:button> 
                             </div>
                          </div>
                      </div>

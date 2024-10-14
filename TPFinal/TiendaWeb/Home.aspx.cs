@@ -19,5 +19,10 @@ namespace TiendaWeb
                 repRepetidor.DataBind();
             }
         }
+        protected void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            string id = ((Button)sender).CommandArgument;
+            Response.Redirect("VerDetalle.aspx?id=" + id);
+        }
     }
 }
