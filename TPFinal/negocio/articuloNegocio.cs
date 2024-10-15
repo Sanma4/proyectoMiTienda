@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
-using static AccesoDatos.AccesoDatos;
 
-namespace AccesoDatos
+namespace negocio
 {
     public class articuloNegocio
     {
@@ -146,31 +145,16 @@ namespace AccesoDatos
 
                 switch (criterio)
                 {
-                    case "Codigo":
-                        switch (parametro)
-                        {
-                            case "Empieza":
-                                consulta += "codigo like '" + filtro + "%'";
-                                break;
-                            case "Contiene":
-                                consulta += "codigo like '%" + filtro + "%'";
-                                break;
-                            case "Termina":
-                                consulta += "codigo like '%" + filtro + "'";
-                                break;
-                        }
-                        break;
-
                     case "Nombre":
                         switch (parametro)
                         {
-                            case "Empieza":
+                            case "Empieza con":
                                 consulta += "nombre like '" + filtro + "%'";
                                 break;
                             case "Contiene":
                                 consulta += "nombre like '%" + filtro + "%'";
                                 break;
-                            case "Termina":
+                            case "Termina con":
                                 consulta += "nombre like '%" + filtro + "'";
                                 break;
                         }
@@ -179,20 +163,14 @@ namespace AccesoDatos
                     case "Marca":
                         switch (parametro)
                         {
-                            case "Samsung":
-                                consulta += "M.Descripcion like '" + parametro + "'";
+                            case "Empieza con":
+                                consulta += "M.Descripcion like '" + filtro + "%'";
                                 break;
-                            case "Apple":
-                                consulta += "M.Descripcion like '" + parametro + "'";
+                            case "Contiene":
+                                consulta += "M.Descripcion like '%" + filtro + "%'";
                                 break;
-                            case "Sony":
-                                consulta += "M.Descripcion like '" + parametro + "'";
-                                break;
-                            case "Huawei":
-                                consulta += "M.Descripcion like '" + parametro + "'";
-                                break;
-                            case "Motorola":
-                                consulta += "M.Descripcion like '" + parametro + "'";
+                            case "Termina con":
+                                consulta += "M.Descripcion like '%" + filtro + "'";
                                 break;
 
                         }
@@ -201,17 +179,14 @@ namespace AccesoDatos
                     case "Categoria":
                         switch (parametro)
                         {
-                            case "Celulares":
-                                consulta += "C.Descripcion like '" + parametro + "'";
+                            case "Empieza con":
+                                consulta += "C.Descripcion like '" + filtro + "%'";
                                 break;
-                            case "Televisores":
-                                consulta += "C.Descripcion like '" + parametro + "'";
+                            case "Contiene":
+                                consulta += "C.Descripcion like '%" + filtro + "%'";
                                 break;
-                            case "Media":
-                                consulta += "C.Descripcion like '" + parametro + "'";
-                                break;
-                            case "Audio":
-                                consulta += "C.Descripcion like '" + parametro + "'";
+                            case "Termina con":
+                                consulta += "C.Descripcion like '%" + filtro + "'";
                                 break;
                         }
                         break;

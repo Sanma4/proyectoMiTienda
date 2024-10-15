@@ -37,9 +37,9 @@
             </div>
             <div class="mb-3">
                 <label for="ddlCategoria" class="form-label">Url Imagen</label>
-                <asp:TextBox runat="server" Id="txtUrlImg" class="form-control"  OnTextChanged="txtUrlImg_TextChanged"/>
+                <asp:TextBox runat="server" Id="txtUrlImg" class="form-control" AutoPostBack="true"  OnTextChanged="txtUrlImg_TextChanged"/>
             </div>
-            <asp:Image ImageUrl="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" ID="UrlImg" runat="server" Width="52%" />
+            <asp:Image ImageUrl="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" ID="UrlImg" runat="server" Width="52%"  />
         </div>
     </div>
     <asp:Button id="btnGuardar" CssClass="btn btn-success" Text="Guardar" OnClick="btnGuardar_Click" runat="server"/>

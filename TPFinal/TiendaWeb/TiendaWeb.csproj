@@ -196,10 +196,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AcessoDatos\AccesoDatos.csproj">
-      <Project>{b22b82a4-2229-4e71-88be-f445cd3e3e04}</Project>
-      <Name>AccesoDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\dominio\dominio.csproj">
       <Project>{c72e8241-95b7-48b5-8fe5-73c64bca27d3}</Project>
       <Name>dominio</Name>

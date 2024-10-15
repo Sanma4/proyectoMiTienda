@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dominio;
-using AccesoDatos;
 
-namespace AccesoDatos
+namespace negocio
 {
     public class marcaNegocio
     {

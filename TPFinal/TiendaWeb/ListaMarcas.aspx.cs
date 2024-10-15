@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using dominio;
-using AccesoDatos;
+using negocio;
 namespace TiendaWeb
 {
     public partial class FormularioMarcas : System.Web.UI.Page
