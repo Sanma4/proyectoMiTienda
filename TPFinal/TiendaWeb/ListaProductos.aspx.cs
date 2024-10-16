@@ -78,5 +78,6 @@ namespace TiendaWeb
                 ddlCriterio.Items.Add("Termina con");
             }
         }
+
     }
 }

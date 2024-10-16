@@ -38,26 +38,47 @@
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="User" style="width: 30px; height: auto; border-radius: 50px;" />
                             </a>
+                            <%if (cuentaIniciada)
+                                {
+                            %>
                             <ul class="dropdown-menu dropdown-menu-lg-end">
                                 <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
                                 <li><a class="dropdown-item" href="#">Favoritos</a></li>
                                 <hr />
-                                <li><a class="dropdown-item" href="#"></a></li>
+                                <li>
+                                        <div class="d-grid gap-2">
+                                            <asp:Button Text="Salir" CssClass="btn btn-outline-danger"
+                                                ID="btnSalir" runat="server" OnClick="btnSalir_Click" />
+                                        </div>
+
+                                </li>
 
                             </ul>
+
+                            <%}
+                                else
+                                {%>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+
+                                <li><a class="dropdown-item" href="Login.aspx">Login</a></li>
+                                <li><a class="dropdown-item" href="Registrarse.aspx">Registrarse</a></li>
+                            </ul>
+
+                            <% } %>
+
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="" >
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server" >
+        <div class="">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
     <hr />
     <footer class="text-center">
-        <h5 style="margin-top: 40px; margin-bottom: 40px"> © Todos los derechos reservados - 2024 </h5>
+        <h5 style="margin-top: 40px; margin-bottom: 40px">© Todos los derechos reservados - 2024 </h5>
 
     </footer>
 </body>

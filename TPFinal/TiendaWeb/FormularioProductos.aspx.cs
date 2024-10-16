@@ -11,10 +11,14 @@ namespace TiendaWeb
 {
     public partial class FormularioProductos : System.Web.UI.Page
     {
+        public bool Eliminar { get; set; }
+        public bool confirmarEliminar { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                confirmarEliminar = false;
+                Eliminar = false;
                 if (!IsPostBack)
                 {
                     marcaNegocio negocio = new marcaNegocio();
@@ -38,6 +42,7 @@ namespace TiendaWeb
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
                 if (id != "" && !IsPostBack)
                 {
+                    Eliminar = true;
                     articuloNegocio negocio = new articuloNegocio();
                     articulo seleccionado = (negocio.listar(id))[0];
 
@@ -92,6 +97,40 @@ namespace TiendaWeb
                 else
                 {
                     negocio.agregar(nuevo);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                Response.Redirect("ListaProductos.aspx");
+            }
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+           confirmarEliminar = true;
+            Eliminar = true;
+        }
+
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            confirmarEliminar = false;
+            Eliminar = true;
+        }
+
+        protected void btnConfirmarEliminacion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (chkConfirmarEliminacion.Checked)
+                {
+                    articuloNegocio negocio = new articuloNegocio();
+                    negocio.eliminar(int.Parse(txtId.Text));
                 }
             }
             catch (Exception ex)

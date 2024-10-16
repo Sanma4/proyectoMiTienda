@@ -11,25 +11,16 @@ namespace TiendaWeb
 {
 
 
-    public partial class FormularioMarcas
+    public partial class Error
     {
 
         /// <summary>
-        /// Control txtFiltro.
+        /// Control lblError.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFiltro;
-
-        /// <summary>
-        /// Control dgvMarcas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvMarcas;
+        protected global::System.Web.UI.WebControls.Label lblError;
     }
 }

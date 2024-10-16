@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using dominio;
 using negocio;
 
 namespace TiendaWeb
@@ -31,6 +32,13 @@ namespace TiendaWeb
         {
             dgvCategorias.PageIndex = e.NewPageIndex;
             dgvCategorias.DataSource = Session["listaCategorias"];
+            dgvCategorias.DataBind();
+        }
+
+        protected void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<categoria> lista = ((List<categoria>)Session["listaCategorias"]).FindAll(x => x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            dgvCategorias.DataSource = lista;
             dgvCategorias.DataBind();
         }
     }

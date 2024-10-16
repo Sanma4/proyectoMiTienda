@@ -4,6 +4,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" />
+    <asp:Label Text="Filtrar(TAB para buscar)" runat="server" />
+    <div class="col-2 mb-3">
+        <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtFiltro_TextChanged" />
+    </div>
     <asp:GridView ID="dgvMarcas" AutoGenerateColumns="false" AllowPaging="true" PageSize="10"
         DataKeyNames="id" CssClass="table" OnSelectedIndexChanged="dgvMarcas_SelectedIndexChanged"
         OnPageIndexChanging="dgvMarcas_PageIndexChanging"

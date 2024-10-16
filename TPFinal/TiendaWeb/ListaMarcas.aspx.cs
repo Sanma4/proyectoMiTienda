@@ -33,5 +33,12 @@ namespace TiendaWeb
             string id = dgvMarcas.SelectedDataKey.Value.ToString();
             Response.Redirect("FormularioMarcas.aspx?id=" + id);
         }
+
+        protected void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<marca> lista = ((List<marca>)Session["listaMarcas"]).FindAll(x => x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            dgvMarcas.DataSource = lista;
+            dgvMarcas.DataBind();
+        }
     }
 }
