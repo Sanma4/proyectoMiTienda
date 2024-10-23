@@ -35,7 +35,8 @@ namespace negocio
                     aux.Categoria = new categoria();
                     aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     aux.Categoria.Id = (int)datos.Lector["IdCategoria"];
-                    aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+                    if (!(datos.Lector["ImagenUrl"] is DBNull))
+                        aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     aux.Precio = Convert.ToDecimal(datos.Lector["Precio"], new CultureInfo("es-ES").NumberFormat);
 
                     lista.Add(aux);
@@ -54,7 +55,39 @@ namespace negocio
             }
 
         }
-        
+
+        public List<Favoritos> ListarFavoritos()
+        {
+            List<Favoritos> lista = new List<Favoritos>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("select U.Id, F.Id, IdArticulo, IdUser, A.Id, A.Nombre, A.IdMarca, A.ImagenUrl from FAVORITOS F, ARTICULOS A, USERS U where F.IdArticulo = A.Id and F.IdUser = U.Id");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Favoritos aux = new Favoritos();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.IdArticulo = (int)datos.Lector["IdArticulo"];
+                    aux.IdUsuario = (int)datos.Lector["IdUser"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    aux.Marca = new marca();
+                    aux.Marca.Id = (int)datos.Lector["IdMarca"];
+                    lista.Add(aux);
+
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
         public void agregar(articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();

@@ -37,7 +37,7 @@
             </div>
             <div class="mb-3">
                 <label for="ddlCategoria" class="form-label">Url Imagen</label>
-                <asp:TextBox runat="server" ID="txtUrlImg" class="form-control" AutoPostBack="true" OnTextChanged="txtUrlImg_TextChanged" />
+                <asp:TextBox runat="server" ID="txtUrlImg" class="form-control" AutoPostBack="true" OnTextChanged="txtUrlImg_TextChanged" ></asp:TextBox>
             </div>
             <asp:Image ImageUrl="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" ID="UrlImg" runat="server" Width="52%" />
         </div>
@@ -45,15 +45,15 @@
     <asp:Button ID="btnGuardar" CssClass="btn btn-success" Text="Guardar" OnClick="btnGuardar_Click" runat="server" />
     <a class="btn btn-dark" href="ListaProductos.aspx">Cancelar</a>
     <%if (Eliminar)
-            { %>
+        { %>
     <asp:Button Text="🗑️" CssClass="btn btn-danger" ID="btnEliminar" OnClick="btnEliminar_Click" runat="server" />
 
-          <%  }
-            %>
+    <%  }
+    %>
     <%if (confirmarEliminar)
         { %>
     <asp:CheckBox Text="¿Esta seguro de eliminar este producto?" ID="chkConfirmarEliminacion" runat="server" />
     <asp:Button Text="✅" runat="server" ID="btnConfirmarEliminacion" CssClass="btn btn-" OnClick="btnConfirmarEliminacion_Click" />
-    <asp:Button Text="❌" runat="server"  CssClass="btn btn-dark" ID="btnCancelar" OnClick="btnCancelar_Click"/> 
+    <asp:Button Text="❌" runat="server" CssClass="btn btn-dark" ID="btnCancelar" OnClick="btnCancelar_Click" />
     <%   } %>
 </asp:Content>

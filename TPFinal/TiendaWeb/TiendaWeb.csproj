@@ -69,15 +69,16 @@
   <ItemGroup>
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Favoritos.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="FormularioCategorias.aspx" />
     <Content Include="Imagenes\Fondo.jpg" />
+    <Content Include="Imagenes\Perfil-13.jpg" />
     <Content Include="ListaCategorias.aspx" />
     <Content Include="ListaMarcas.aspx" />
     <Content Include="FormularioProductos.aspx" />
-    <Content Include="Home.aspx" />
     <Content Include="FormularioMarcas.aspx" />
     <Content Include="ListaProductos.aspx" />
     <Content Include="Login.aspx" />
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
@@ -137,13 +145,6 @@
     </Compile>
     <Compile Include="FormularioProductos.aspx.designer.cs">
       <DependentUpon>FormularioProductos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.Master.cs">
       <DependentUpon>Home.Master</DependentUpon>
