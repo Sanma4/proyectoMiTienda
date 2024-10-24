@@ -14,6 +14,7 @@
         </div>
     </div>
     <div class="container">
+        <div style="font-size: 30px" class="text-center mb-3 mt-3">Aca vas a encontrar los mejores precios</div>
         <hr />
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <asp:Repeater runat="server" ID="repRepetidor">
