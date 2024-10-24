@@ -57,6 +57,10 @@ namespace TiendaWeb
 
                     repRepetidor.DataSource = negocio.ListarFavoritos(usuario.Id);
                     repRepetidor.DataBind();
+                    if (negocio.ListarFavoritos(usuario.Id).Count > 0)
+                        FavoritosAgregados = true;
+                    else
+                        FavoritosAgregados = false;
                 }
                 catch (Exception ex)
                 {
