@@ -13,7 +13,11 @@ namespace TiendaWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Seguridad.Admin(Session["Usuario"]))
+            {
+                Session.Add("Error", "No tienes permisos sufiencintes para acceder a este sitio");
+                Response.Redirect("Error.aspx", false);
+            }else if (!IsPostBack)
             {
                 string id = Request.QueryString["id"] != null ? Request.QueryString["id"].ToString() : "";
                 if (id != "")

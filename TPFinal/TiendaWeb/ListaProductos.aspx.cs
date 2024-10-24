@@ -14,7 +14,11 @@ namespace TiendaWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             filtroAvanzado = chkFiltro.Checked;
-            if (!IsPostBack)
+            if (!Seguridad.Admin(Session["Usuario"]))
+            {
+                Session.Add("Error", "No tienes permisos sufiencintes para acceder a este sitio");
+                Response.Redirect("Error.aspx", false);
+            }else if (!IsPostBack)
             {
                 articuloNegocio negocio = new articuloNegocio();
                 Session.Add("listaArticulos", negocio.listar());

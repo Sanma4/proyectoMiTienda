@@ -12,7 +12,11 @@ namespace TiendaWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!Seguridad.Admin(Session["Usuario"]))
+            {
+                Session.Add("Error", "No tienes permisos sufiencintes para acceder a este sitio");
+                Response.Redirect("Error.aspx", false);
+            }else if (!IsPostBack)
             {
                 marcaNegocio negocio = new marcaNegocio();
                 Session.Add("listaMarcas", negocio.listar());
