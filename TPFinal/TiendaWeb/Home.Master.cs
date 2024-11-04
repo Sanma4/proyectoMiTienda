@@ -18,7 +18,7 @@ namespace TiendaWeb
             ImgPerfil.ImageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png";
                 if (Seguridad.SessionIniciada(Session["Usuario"]))
                 {
-                    if ((Page is Login || Page is Registrarse || Page is Error || Page is VerDetalle))
+                    if ((Page is Login || Page is Registrarse || Page is Error))
                     {
                         Response.Redirect("Login.aspx");
                     }
