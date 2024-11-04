@@ -51,8 +51,8 @@ namespace TiendaWeb
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Session.Add("Error", Validaciones.validacionEx(ex));
+                Response.Redirect("Erros.aspx");
             }
             finally
             {

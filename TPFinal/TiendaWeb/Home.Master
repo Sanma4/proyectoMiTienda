@@ -26,7 +26,7 @@
                             <a class="nav-link active" aria-current="page" href="Default.aspx">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#ContentPlaceHolder1">Productos</a>
+                            <a class="nav-link" href="#Productos">Productos</a>
                         </li>
                         <%if (Admin)
                             {%>
@@ -78,11 +78,13 @@
                 </div>
             </div>
         </nav>
-        <div class="">
+        <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                <div id="Productos"></div>
             </asp:ContentPlaceHolder>
         </div>
     </form>
+
     <footer class="py-4 bg-light mt-auto" style="position: absolute; bottom: 0; width: 100%;">
         <div class="container-fluid px-4">
             <div class="d-flex align-items-center justify-content-between small">

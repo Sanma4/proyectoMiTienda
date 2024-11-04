@@ -18,7 +18,8 @@ namespace TiendaWeb
             {
                 Session.Add("Error", "No tienes permisos sufiencintes para acceder a este sitio");
                 Response.Redirect("Error.aspx", false);
-            }else if (!IsPostBack)
+            }
+            else if (!IsPostBack)
             {
                 articuloNegocio negocio = new articuloNegocio();
                 Session.Add("listaArticulos", negocio.listar());
@@ -60,8 +61,8 @@ namespace TiendaWeb
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Session.Add("Error", Validaciones.validacionEx(ex));
+                Response.Redirect("Erros.aspx");
             }
         }
 
@@ -83,5 +84,11 @@ namespace TiendaWeb
             }
         }
 
+        protected void txtFiltroNormal_TextChanged(object sender, EventArgs e)
+        {
+            List<articulo> lista = ((List<articulo>)Session["listaArticulos"]).FindAll(x => x.Nombre.ToUpper().Contains(txtFiltroNormal.Text.ToUpper()));
+            dgvListaProductos.DataSource = lista;
+            dgvListaProductos.DataBind();
+        }
     }
 }

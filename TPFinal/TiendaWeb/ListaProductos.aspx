@@ -6,10 +6,16 @@
     <asp:ScriptManager runat="server" />
     <div class="row">
         <div class="col-4 mb-3">
-            <asp:CheckBox Text="Filtro" ID="chkFiltro" runat="server" AutoPostBack="true" OnCheckedChanged="chkFiltro_CheckedChanged" />
+            <asp:Label Text="Filtro(TAB para buscar)" runat="server" />
+            <asp:TextBox runat="server" ID="txtFiltroNormal" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtFiltroNormal_TextChanged"/>
         </div>
-
     </div>
+    <div class="row">
+        <div class="col-4 mb-3">
+            <asp:CheckBox Text="Filtros" ID="chkFiltro" runat="server" AutoPostBack="true" OnCheckedChanged="chkFiltro_CheckedChanged" />
+        </div>
+    </div>
+
     <%if (filtroAvanzado)
         {%>
     <div class="row">

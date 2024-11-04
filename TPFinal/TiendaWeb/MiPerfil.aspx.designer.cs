@@ -42,6 +42,15 @@ namespace TiendaWeb
         protected global::System.Web.UI.WebControls.TextBox txtApellido;
 
         /// <summary>
+        /// Control txtContraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+
+        /// <summary>
         /// Control txtImg.
         /// </summary>
         /// <remarks>
@@ -60,12 +69,12 @@ namespace TiendaWeb
         protected global::System.Web.UI.WebControls.Image imgPerfil;
 
         /// <summary>
-        /// Control txtGuardar.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txtGuardar;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
     }
 }

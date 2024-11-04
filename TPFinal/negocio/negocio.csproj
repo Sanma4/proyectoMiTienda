@@ -49,6 +49,7 @@
     <Compile Include="Recursos.cs" />
     <Compile Include="Seguridad.cs" />
     <Compile Include="usuarioNegocio.cs" />
+    <Compile Include="Validaciones.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AcessoDatos\AccesoDatos.csproj">

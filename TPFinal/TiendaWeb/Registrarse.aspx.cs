@@ -40,7 +40,7 @@ namespace TiendaWeb
             }
             catch (Exception ex)
             {
-                Session.Add("Error", "Ha habido un error al crear tu cuenta");
+                Session.Add("Error", Validaciones.validacionEx(ex));
                 Response.Redirect("Error.aspx");
             }
 

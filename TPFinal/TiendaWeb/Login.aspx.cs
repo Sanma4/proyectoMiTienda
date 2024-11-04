@@ -22,6 +22,11 @@ namespace TiendaWeb
             usuarioNegocio negocio = new usuarioNegocio();
             try
             {
+                if (string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtContraseña.Text)) 
+                {
+                    Session.Add("Error", "Debes completar ambos campos para acceder.");
+                    Response.Redirect("Error.aspx", false);
+                }
                 persona.Email = txtEmail.Text;
                 persona.Pass = txtContraseña.Text;
                 if (negocio.Loguear(persona))
@@ -37,7 +42,7 @@ namespace TiendaWeb
             }
             catch (Exception ex)
             {
-                Session.Add("Error", "Error");
+                Session.Add("Error", Validaciones.validacionEx(ex));
                 Response.Redirect("Error.aspx", false);
             }
         }

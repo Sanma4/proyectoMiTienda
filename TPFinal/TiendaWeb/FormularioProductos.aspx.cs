@@ -23,7 +23,8 @@ namespace TiendaWeb
                 {
                     Session.Add("Error", "No tienes permisos sufiencintes para acceder a este sitio");
                     Response.Redirect("Error.aspx", false);
-                }else if (!IsPostBack)
+                }
+                else if (!IsPostBack)
                 {
                     marcaNegocio negocio = new marcaNegocio();
                     List<marca> lista = negocio.listar();
@@ -58,16 +59,16 @@ namespace TiendaWeb
                     txtDescripcion.Text = seleccionado.Descripcion;
                     txtPrecio.Text = seleccionado.Precio.ToString("##,##");
                     txtUrlImg.Text = seleccionado.ImagenUrl;
+                    txtUrlImg_TextChanged(sender, e);
 
                     ddlCategoria.SelectedValue = seleccionado.Categoria.Id.ToString();
                     ddlMarca.SelectedValue = seleccionado.Marca.Id.ToString();
-                    txtUrlImg_TextChanged(sender, e);
                 }
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Session.Add("Error", Validaciones.validacionEx(ex));
+                Response.Redirect("Erros.aspx");
             }
         }
 
@@ -105,8 +106,8 @@ namespace TiendaWeb
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Session.Add("Error", Validaciones.validacionEx(ex));
+                Response.Redirect("Erros.aspx");
             }
             finally
             {
@@ -116,7 +117,7 @@ namespace TiendaWeb
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-           confirmarEliminar = true;
+            confirmarEliminar = true;
             Eliminar = true;
         }
 

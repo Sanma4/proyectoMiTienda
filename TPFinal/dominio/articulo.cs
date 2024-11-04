@@ -21,5 +21,6 @@ namespace dominio
         public bool Activo { get; set; }
 
 
+
     }
 }

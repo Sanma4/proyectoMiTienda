@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="MiPerfil.aspx.cs" Inherits="TiendaWeb.MiPerfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .validacion {
+            color: red;
+            font-size: 13px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
@@ -17,8 +23,12 @@
                 <div class="mb-3">
                     <label for="txtApellido" class="form-label">Apellido</label>
                     <asp:TextBox runat="server" ID="txtApellido" CssClass="form-control" Enabled="true" />
+                    <asp:RegularExpressionValidator ErrorMessage="Este campo solo acepta apellidos reales" ValidationExpression="[a-zA-Z ]{2,254}" CssClass="validacion" ControlToValidate="txtApellido" runat="server" />
                 </div>
-
+                <div class="mb-3">
+                    <label for="txtContraseña" class="form-label">Cambiar contraseña</label>
+                    <asp:TextBox runat="server" ID="txtContraseña" CssClass="form-control" Enabled="true" />
+                </div>
             </div>
             <div class="col-6">
                 <div class="mb-3">
@@ -30,8 +40,8 @@
                     runat="server" CssClass="img-fluid mb-3" />
             </div>
             <div class="mb-3">
-                <asp:Button Text="Guardar" OnClick="txtGuardar_Click" ID="txtGuardar" CssClass="btn btn-success" runat="server" />
-                <a href="Home.aspx" class="btn btn-dark">Inicio</a>
+                <asp:Button Text="Guardar" OnClick="btnGuardar_Click" ID="btnGuardar" CssClass="btn btn-success" runat="server" />
+                <a href="Home.aspx" class="btn btn-dark">Cancelar</a>
             </div>
         </div>
     </div>

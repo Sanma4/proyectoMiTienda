@@ -33,6 +33,25 @@ namespace negocio
             }
         }
 
+        public void ActualizarContraseña(string pass, string correo)
+        {
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Update Users set pass = @pass where email = @email");
+                datos.setearParametro("@pass", pass);
+                datos.setearParametro("@email", correo);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally 
+            { datos.cerrarConexion();}
+        }
+
         public bool Loguear(Usuario usuario)
         {
             AccesoDatos datos = new AccesoDatos();

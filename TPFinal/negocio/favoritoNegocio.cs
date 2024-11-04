@@ -23,10 +23,14 @@ namespace negocio
                     aux.Id = (int)datos.Lector["Id"];
                     aux.IdArticulo = (int)datos.Lector["IdArticulo"];
                     aux.IdUsuario = (int)datos.Lector["IdUser"];
-                    aux.Nombre = (string)datos.Lector["Nombre"];
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+
+                    aux.Articulo = new articulo();
+                    aux.Articulo.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Articulo.ImagenUrl = (string)datos.Lector["ImagenUrl"];
+
                     aux.Marca = new marca();
                     aux.Marca.Id = (int)datos.Lector["IdMarca"];
+
                     lista.Add(aux);
 
                 }
@@ -69,7 +73,7 @@ namespace negocio
                 datos.setearConsulta("Delete top(1) from Favoritos where IdArticulo = @id");
                 datos.setearParametro("@id", id);
                 datos.ejecutarAccion();
-            } 
+            }
             catch (Exception ex)
             {
 

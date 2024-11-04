@@ -21,13 +21,14 @@ namespace TiendaWeb
                     txtEmail.Text = user.Email;
                     txtNombre.Text = user.Nombre;
                     txtApellido.Text = user.Apellido;
-                    if(!string.IsNullOrEmpty(user.UrlImg))
+                    if (!string.IsNullOrEmpty(user.UrlImg))
                         imgPerfil.ImageUrl = "~/Imagenes/" + user.UrlImg;
                 }
             }
         }
 
-        protected void txtGuardar_Click(object sender, EventArgs e)
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -48,11 +49,25 @@ namespace TiendaWeb
                 img.ImageUrl = "~/Imagenes/" + usuario.UrlImg;
 
                 imgPerfil.ImageUrl = "~/Imagenes/" + usuario.UrlImg;
+
+                if (!string.IsNullOrEmpty(txtContraseña.Text))
+                {
+                    usuarioNegocio uNegocio = new usuarioNegocio();
+                    try
+                    {
+                        negocio.ActualizarContraseña(txtContraseña.Text, txtEmail.Text);
+                    }
+                    catch (Exception ex)
+                    {
+                        Session.Add("Error", Validaciones.validacionEx(ex));
+                        Response.Redirect("Error.aspx");
+                    }
+                }
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                Session.Add("Error", Validaciones.validacionEx(ex));
+                Response.Redirect("Error.aspx");
             }
             finally
             {

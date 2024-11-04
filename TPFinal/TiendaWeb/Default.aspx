@@ -1,6 +1,18 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TiendaWeb.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+
+    function ImagenDefecto()
+    {
+
+        this.onerror=null; 
+
+        this.src = 'https://img.freepik.com/vector-premium/icono-marco-fotos-foto-vacia-blanco-vector-sobre-fondo-transparente-aislado-eps-10_399089-1290.jpg?w=740';
+
+    }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" />
@@ -14,14 +26,14 @@
         </div>
     </div>
     <div class="container">
-        <div style="font-size: 30px" class="text-center mb-3 mt-3">Aca vas a encontrar los mejores precios</div>
+        <div style="font-size: 30px" class="text-center mb-3 mt-3">ARTICULOS</div>
         <hr />
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <asp:Repeater runat="server" ID="repRepetidor">
                 <ItemTemplate>
                     <div class="col">
                         <div class="card h-100">
-                            <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" style="height: 400px; width: auto;" alt="Imagen">
+                            <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" style="height: 400px; width: auto;" alt="Imagen" id="imgArticulo" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'">
                             <div class="card-body">
                                 <h4 class="card-title"><%#Eval("Nombre") %></h4>
                                 <p class="card-text"><%#Eval("Marca") %></p>
