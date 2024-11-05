@@ -23,12 +23,13 @@
                             <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="Debes completar el campo" ControlToValidate="txtEmail" runat="server" />
                         </div>
                         <%--<asp:RegularExpressionValidator ErrorMessage="El texto debe ser un email" ControlToValidate="txtEmail" CssClass="validacion" ValidationExpression="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$" runat="server" />--%>
-                        <div class="form-floating mb-3">
-                            <asp:TextBox runat="server" ID="txtContraseña" type="password" placeholder="Contraseña" CssClass="form-control" />
+                        <div class="form-floating">
+                            <asp:TextBox runat="server" ID="txtContraseña" type="password" placeholder="Contraseña" CssClass="form-control" Text=""/>
                             <label for="inputPassword">Contraseña *</label>
                             <asp:RequiredFieldValidator CssClass="validacion" ErrorMessage="Debes completar el campo" ControlToValidate="txtContraseña" runat="server" />
 
                         </div>
+                        <asp:Label Text="" runat="server" CssClass="form-label validacion" ID="lblError" />
                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                             <a class="small" href="NuevaPass.aspx">¿Has olvidado tu contraseña?</a>
                             <asp:Button Text="Entrar" CssClass="btn btn-primary" runat="server" ID="btnEntrar" OnClick="btnEntrar_Click" />

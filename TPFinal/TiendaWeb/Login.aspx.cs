@@ -36,8 +36,7 @@ namespace TiendaWeb
                 }
                 else
                 {
-                    Session.Add("Error", "User o contraseña incorrecta");
-                    Response.Redirect("Error.aspx", false);
+                    lblError.Text = "Email o contraseña incorrecta";
                 }
             }
             catch (Exception ex)
