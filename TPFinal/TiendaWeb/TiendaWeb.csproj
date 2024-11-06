@@ -87,7 +87,6 @@
     <Content Include="NuevaPass.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="JS\scripts.js" />
-    <Content Include="styles.css" />
     <Content Include="VerDetalle.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
