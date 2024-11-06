@@ -16,26 +16,23 @@ namespace TiendaWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             ImgPerfil.ImageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png";
-                if (Seguridad.SessionIniciada(Session["Usuario"]))
-                {
-                    if ((Page is Login || Page is Registrarse || Page is Error))
-                    {
-                        Response.Redirect("Login.aspx");
-                    }
-                    else
-                    {
-                        Usuario user = (Usuario)Session["Usuario"];
-                        if (!string.IsNullOrEmpty(user.UrlImg))
-                            ImgPerfil.ImageUrl = "~/Imagenes/" + user.UrlImg;
+            if (Seguridad.SessionIniciada(Session["Usuario"]))
+            {
+                Usuario user = (Usuario)Session["Usuario"];
+                if (!string.IsNullOrEmpty(user.UrlImg))
+                    ImgPerfil.ImageUrl = "~/Imagenes/" + user.UrlImg;
 
-                        if (Seguridad.Admin(Session["Usuario"]))
-                            Admin = true;
+                if (Seguridad.Admin(Session["Usuario"]))
+                    Admin = true;
 
-                        lblNombre.Text = user.Email;
-                        cuentaIniciada = true;
-                    }
+                lblNombre.Text = user.Email;
+                cuentaIniciada = true;
 
-                }
+            }
+            else if (Page is MiPerfil || Page is Favoritos)
+            {
+                Response.Redirect("Login.aspx", false);
+            }
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)
