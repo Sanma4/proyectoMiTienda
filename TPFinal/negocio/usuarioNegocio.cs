@@ -9,6 +9,37 @@ namespace negocio
 {
     public class usuarioNegocio
     {
+        public List<Usuario> ListarUsuarios()
+        {
+            List<Usuario> lista = new List<Usuario> ();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("Select Id, nombre, apellido, email, pass, urlImagenPerfil, admin from USERS");
+                datos.ejecutarLectura();
+                while (datos.Lector.Read())
+                {
+                    Usuario aux = new Usuario();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Nombre = (string)datos.Lector["nombre"];
+                    aux.Apellido = (string)datos.Lector["apellido"];
+                    aux.Email = (string)datos.Lector["email"];
+                    aux.Pass = (string)datos.Lector["pass"];
+                    aux.UrlImg = (string)datos.Lector["pass"];
+                    aux.Admin = (bool)datos.Lector["admin"];
+
+                    lista.Add(aux);
+
+                }
+                
+                return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
         public void Actualizar(Usuario usuario)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -88,11 +119,13 @@ namespace negocio
             }
         }
 
+
         public int agregarUsuario(Usuario usuario)
         {
             AccesoDatos datos = new AccesoDatos();
             try
             {
+                
                 datos.setearConsulta("insert into USERS(Email, Pass, Nombre, Apellido, admin) output inserted.id values (@email, @pass, @nombre, @apellido, 0)");
                 datos.setearParametro("@nombre", usuario.Nombre);
                 datos.setearParametro("@apellido", usuario.Apellido);
@@ -104,6 +137,10 @@ namespace negocio
             {
 
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
     }

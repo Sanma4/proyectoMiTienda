@@ -13,7 +13,6 @@ namespace TiendaWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)
@@ -28,9 +27,14 @@ namespace TiendaWeb
                     usuario.Pass = txtContraseña.Text;
                     usuario.Nombre = txtNombre.Text;
                     usuario.Apellido = txtApellido.Text;
+                    if (comprobarUsuario(usuario))
+                    {
+                        lblError.Text = "Este email ya se encuentra registrado";
+                        return;
+                    }
                     usuario.Id = negocio.agregarUsuario(usuario);
                     Session.Add("usuario", usuario);
-                    Response.Redirect("MiPerfil.aspx");
+                    Response.Redirect("MiPerfil.aspx", false);
                 }
                 else
                 {
@@ -45,5 +49,22 @@ namespace TiendaWeb
             }
 
         }
+
+        private bool comprobarUsuario(Usuario nuevo)
+        {
+            usuarioNegocio negocio = new usuarioNegocio();
+            List<Usuario> usuarioExistente = negocio.ListarUsuarios();
+
+            foreach (Usuario usuario in usuarioExistente)
+            {
+                if(usuario.Email == nuevo.Email)
+                {
+                    return true; 
+                }
+            }
+            return false;
+        }
     }
+
+    
 }

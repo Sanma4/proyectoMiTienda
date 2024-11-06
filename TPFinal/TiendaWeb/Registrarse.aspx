@@ -31,9 +31,9 @@
                         <div class="form-floating mb-3">
                             <asp:TextBox runat="server" ID="txtEmail" placeholder="tuemail@gmail.com" CssClass="form-control" />
                             <label for="inputEmail">Email *</label>
-                            <asp:RequiredFieldValidator ErrorMessage="Debes completar el campo" CssClass="validacion" ControlToValidate="txtEmail" runat="server" />
-                            <asp:RegularExpressionValidator ErrorMessage="El texto debe ser un email" ControlToValidate="txtEmail" ValidationExpression="/^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})$/" CssClass="validacion" runat="server" />
+                            <asp:Label Text="" ID="lblError" CssClass="validacion" runat="server" />
                         </div>
+                        <asp:RequiredFieldValidator ErrorMessage="Debes completar el campo" CssClass="validacion" ControlToValidate="txtEmail" runat="server" />
                         <div class="form-floating mb-3">
                             <asp:TextBox runat="server" ID="txtContraseña" type="password" placeholder="Contraseña" CssClass="form-control" />
                             <label for="inputPassword">Contraseña *</label>

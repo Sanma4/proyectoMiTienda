@@ -12,6 +12,12 @@
         }
 
     </script>
+    <style>
+        .validacion {
+            color: red;
+            font-size: 13px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ScriptManager runat="server" />
@@ -21,7 +27,7 @@
                 <asp:Repeater runat="server" ID="repRepetidor">
                     <ItemTemplate>
                         <div class="col-md-6">
-                            <img class="card-img-top mb-5 mb-md-0" src="<%#Eval("ImagenUrl") %>" alt="Imagen" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'"/>
+                            <img class="card-img-top mb-5 mb-md-0" src="<%#Eval("ImagenUrl") %>" alt="Imagen" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'" />
                         </div>
                         <div class="col-md-6">
                             <div class="small mb-1"><%#Eval("Codigo") %></div>
@@ -30,10 +36,11 @@
                                 <span><%#Eval("Precio", "{0:F2}") %></span>
                             </div>
                             <p class="lead"><%#Eval("Descripcion") %></p>
+                            <asp:Button runat="server" class="btn btn-dark" Text="Añadir a favoritos" ID="btnAgregarFavorito" CommandArgument='<%#Eval("Id")%>' CommandName="IdArticulo" OnClick="btnAgregarFavorito_Click"></asp:Button>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
-
+                <asp:Label Text="" ID="lblError" CssClass="validacion" runat="server" />
             </div>
         </div>
     </section>
