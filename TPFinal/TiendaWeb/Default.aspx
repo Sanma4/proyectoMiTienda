@@ -15,7 +15,7 @@
     </script>
 
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1"  runat="server">
     <asp:ScriptManager runat="server" />
     <div class="carousel-inner">
 
@@ -26,17 +26,17 @@
             <h2 class=" me-5">BIENVENIDO A MI TIENDA</h2>
         </div>
     </div>
-    <div class="container">
+    <div class="container bg-white">
         <div style="font-size: 30px" class="text-center mb-3 mt-3">ARTICULOS</div>
         <hr />
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <asp:Repeater runat="server" ID="repRepetidor">
                 <ItemTemplate>
-                    <div class="col">
-                        <div class="card h-100" style="box-shadow: 0px 5px 5px grey;" >
-                            <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" style="max-height: 350px; max-width: 400px; padding: 30px; display:flex;" alt="Imagen" id="imgArticulo" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'">
+                    <div class="col  bg-white">
+                        <div class="card h-100  bg-white" style="box-shadow: 0px 5px 5px grey;" >
+                            <img src="<%#Eval("ImagenUrl") %>" class="card-img-top img-thumbnail bg-white" style="max-height: 350px; width: 100%; padding: 30px;" alt="Imagen" id="imgArticulo" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'">
                             <div class="card-body">
-                                <h4 class="card-title align-content-end"><%#Eval("Nombre") %></h4>
+                                <h4 class="card-title align-content-end text-dark"><%#Eval("Nombre") %></h4>
                                 <p class="card-text"><%#Eval("Marca") %></p>
                                 <asp:UpdatePanel runat="server">
                                     <ContentTemplate>

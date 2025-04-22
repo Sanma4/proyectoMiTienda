@@ -25,7 +25,7 @@
                 <ItemTemplate>
                     <div class="col mb-3">
                         <div class="card h-100" style="box-shadow: 0px 5px 5px grey;">
-                            <img src="<%#Eval("Articulo.ImagenUrl") %>" style="max-height: 350px; max-width: 400px; padding: 30px; display:flex;" cssclass="card-img-top" id="imgArticulo" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'" />
+                          <img src="<%#Eval("Articulo.ImagenUrl") %>" class="card-img-top img-thumbnail" style="max-height: 350px; width: 100%; padding: 30px;" alt="Imagen" id="imgArticulo" onerror="this.onerror=null; this.src = 'https://www.nycourts.gov/courts/ad4/assets/Placeholder.png'">
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Articulo.Nombre") %></h5>
                                 <p class="card-text"><%#Eval("Marca") %></p>

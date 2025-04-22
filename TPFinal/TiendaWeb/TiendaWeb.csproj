@@ -67,16 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="css\styles.css" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Favoritos.aspx" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="FormularioCategorias.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagenes\bolsa-de-la-compra.png" />
     <Content Include="Imagenes\Fondo.jpg" />
+    <Content Include="Imagenes\Icono.ico" />
     <Content Include="Imagenes\Perfil-13.jpg" />
+    <Content Include="Imagenes\icono.png" />
     <Content Include="ListaCategorias.aspx" />
     <Content Include="ListaMarcas.aspx" />
     <Content Include="FormularioProductos.aspx" />

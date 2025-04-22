@@ -49,14 +49,23 @@ namespace negocio
             AccesoDatos datos = new AccesoDatos();
             try
             {
+                datos.setearConsulta("select * from Favoritos where IdArticulo = " + Producto.Id + "and IdUser = " + User.Id);
+                datos.ejecutarLectura();
+                if (datos.Lector.Read())
+                    return;
+
+                datos.cerrarConexion();
+
                 datos.setearConsulta("Insert into Favoritos values (@IdUsuario, @IdArticulo)");
                 datos.setearParametro("@IdUsuario", User.Id);
                 datos.setearParametro("@IdArticulo", Producto.Id);
                 datos.ejecutarAccion();
+
+
+
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             finally
